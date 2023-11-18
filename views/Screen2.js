@@ -62,7 +62,7 @@ export default function Screen2({ route, navigation }) {
             <TextInput
                 style={{ fontSize: 20, fontWeight: 'bold' }}
                 value={item.name}
-                onChangeText={(text) => setJobUpdate(text)}
+               
             />
             <Pressable onPress={() => handleUpdateNavigation(item.name,item.id)}>
                 <Image source={require('../assets/Data/iconamoon_edit-bold.png')} style={{ width: 20, height: 20, marginRight: 10 }} />
