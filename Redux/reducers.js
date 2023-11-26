@@ -1,8 +1,8 @@
 const initialState = {
     // Khởi tạo trạng thái ban đầu của ứng dụng
     todos: [
-      { id: 1, name: 'To check email', completed: false },
-      { id: 2, name: 'UI task web page', completed: false },
+      { id: 1, name: 'Bùi Ngọc Tùng' },
+      { id: 2, name: 'Lê Trung Chánh' },
       
     ],
   };
