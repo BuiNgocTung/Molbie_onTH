@@ -137,7 +137,7 @@ export default function Screen2({ navigation }) {
                 </View>
 
                 <View style={{ justifyContent: 'flex-end' }}>
-                    <TouchableOpacity style={styles.bnt1} onPress={() => { handAdd(name) }}>
+                    <TouchableOpacity style={styles.btnAdd} onPress={() => { handAdd(name) }}>
                         <Text style={{
                             fontSize: 30, fontWeight: 150, color: "white",
                             fontWeight: "bold"
@@ -183,7 +183,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 5
     },
-    bnt1: {
+    btnAdd: {
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: "green",

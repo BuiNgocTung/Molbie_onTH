@@ -2,12 +2,13 @@ const initialState = {
     // Khởi tạo trạng thái ban đầu của ứng dụng
     todos: [
       { id: 1, name: 'Bùi Ngọc Tùng' },
-      { id: 2, name: 'Lê Trung Chánh' },
+      { id: 2, name: 'Lê Trung Chanh' },
       
     ],
+    result: 0,
   };
   
-  const rootReducer = (state = initialState, action) => {
+  const reducers = (state = initialState, action) => {
     switch (action.type) {
       case 'ADD_TODO':
         return {
@@ -31,10 +32,37 @@ const initialState = {
             ...state,
             searchQuery: action.payload, // Lưu trữ query tìm kiếm trong state
           };
+
+          //
+            case 'ADD':
+              return {
+                ...state,
+                result: state.result + action.payload,
+              };
+            case 'SUBTRACT':
+              return {
+                ...state,
+                result: state.result - action.payload,
+              };
+            case 'MULTIPLY':
+              return {
+                ...state,
+                result: state.result * action.payload,
+              };
+            case 'DIVIDE':
+              return {
+                ...state,
+                result: state.result / action.payload,
+              };
+            case 'RESET':
+              return {
+                ...state,
+                result: 0,
+              };
       default:
         return state;
     }
   };
   
-  export default rootReducer;
+  export default reducers;
   

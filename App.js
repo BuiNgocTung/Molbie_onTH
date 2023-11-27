@@ -1,26 +1,31 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import redux from './views/Redux';
-import Api from './views/Api';
-import main from './views/Main';
+import Menu from './Main/Menu';
+import CRudAPI from './views/Crud/Api';
+import CrudRedux from './Main/MainCrudReudx';
+import CrudReduxTK from './Main/MainCrudReduxTK';
+
+import PhepToan from './Main/MainPhepToanRedux';
+import PhepToanRTK from './Main/MainPhepToanRTK';
 import { Provider } from 'react-redux';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-import store from './Redux/store';
+// import store from './rtk/store';
 export default function App() {
   return (
-    <Provider store={store}>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Main'
+      <Stack.Navigator initialRouteName='Menu'
         screenOptions={{ headerShown: true }} >
-        <Stack.Screen name="Main" component={main} />
-        <Stack.Screen name="Api" component={Api} />
-        <Stack.Screen name="redux" component={redux} />
- 
+        <Stack.Screen name="Menu" component={Menu} />
+        <Stack.Screen name="CRudAPI" component={CRudAPI} />
+        <Stack.Screen name="CrudRedux" component={CrudRedux} />
+        <Stack.Screen name="CrudReduxTK" component={CrudReduxTK} />
+
+        <Stack.Screen name="PhepToan" component={PhepToan} />
+        <Stack.Screen name="PhepToanRTK" component={PhepToanRTK} />   
       </Stack.Navigator>
     </NavigationContainer> 
-    </Provider> )
-    ;
+     );
 }
 
